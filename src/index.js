@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Header from './includes/Header';
+import axios from 'axios';
+
+axios.defaults.baseURL = 'https://localhost/projects/passport-authentication/public/api'
+
+axios.defaults.headers.common['Authorization']='Bearer '+localStorage.getItem('token')
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+  <Header/>
   </React.StrictMode>,
   document.getElementById('root')
 );
